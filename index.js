@@ -88,7 +88,7 @@ class Nominatim {
           return
         }
 
-        axios.get(url, { params: queryObject.plainObject() })
+        axios.get(url, { params: queryObject.plainObject(), headers: {'User-Agent': 'Nominatim-Node-Client'}})
           .then((response) => {
             resolve(response.data)
           })
